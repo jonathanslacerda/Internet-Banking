@@ -7,14 +7,14 @@ const changePasscode = joi.object({
         'any.required': 'email required',
     }),
 
-    senha_antiga: joi.string().min(5).required().messages({
+    old_passcode: joi.string().min(5).required().messages({
         'string.empty': 'passcode required',
         'any.required': 'passcode required',
         'string.base': 'Passcode must have letters and numbers',
         'string.min': 'Passcode must have at least 5 caracters'
     }),
 
-    senha_nova: joi.string().min(5).required().messages({
+    new_passcode: joi.string().min(5).required().messages({
         'string.empty': 'passcode required',
         'any.required': 'passcode required',
         'string.base': 'Passcode must have letters and numbers',
