@@ -10,6 +10,7 @@ const createAccountSchema = require('./validations/createAccountSchema')
 const loginSchema = require('./validations/loginSchema')
 const changePasscodeSchema = require('./validations/changePasscodeSchema')
 const idParamsSchema = require('./validations/idParamsSchema');
+const depositSchema = require('./validations/depositsSchema');
 
 
 // Controllers Import
@@ -18,7 +19,7 @@ const loginAccount = require('./controllers/loginAccount');
 const detailProfile = require('./controllers/detailProfile');
 const changePasscode = require('./controllers/changePasscode');
 const deleteAccount = require('./controllers/deleteAccount');
-const newDeposits = require('./controllers/deposits')
+const newDeposits = require('./controllers/deposits');
 
 
 // User routers
@@ -33,7 +34,7 @@ routers.delete('/account/:id', paramsRequestValidation(idParamsSchema), deleteAc
 
 // Transaction Routers
 
-routers.post('/transactions/deposits', newDeposits)
+routers.post('/transactions/deposits', bodyRequestValidation(depositSchema), newDeposits)
 
 
 
