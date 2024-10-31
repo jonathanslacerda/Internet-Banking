@@ -23,6 +23,8 @@ const loginAccount = async (req, res) => {
         return res.status(200).json({ id: user.id, fullname: user.fullname, email: user.email, token })
 
     } catch (error) {
+
+        console.log(error)
         return res.status(500).json({ mensagem: 'Internal error' })
     }
 };

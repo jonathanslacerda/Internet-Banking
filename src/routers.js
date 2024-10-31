@@ -18,6 +18,7 @@ const loginAccount = require('./controllers/loginAccount');
 const detailProfile = require('./controllers/detailProfile');
 const changePasscode = require('./controllers/changePasscode');
 const deleteAccount = require('./controllers/deleteAccount');
+const newDeposits = require('./controllers/deposits')
 
 
 // User routers
@@ -31,6 +32,8 @@ routers.patch('/account', bodyRequestValidation(changePasscodeSchema), changePas
 routers.delete('/account/:id', paramsRequestValidation(idParamsSchema), deleteAccount)
 
 // Transaction Routers
+
+routers.post('/transactions/deposits', newDeposits)
 
 
 

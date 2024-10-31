@@ -5,7 +5,7 @@ const cors = require('cors');
 const routers = require('./routers')
 
 
-const port = process.env.PORT || 3000;
+
 const app = express();
 
 
@@ -14,4 +14,4 @@ app.use(express.json());
 app.use(routers);
 
 
-app.listen(port, console.log(`API running at port ${port}`))
+app.listen(process.env.PORT, console.log(`API running at port ${process.env.PORT}`))
