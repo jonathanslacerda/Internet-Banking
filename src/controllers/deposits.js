@@ -1,4 +1,3 @@
-const { date } = require('joi');
 const knex = require('../connection');
 const { format } = require('date-fns')
 
@@ -24,8 +23,6 @@ const newDeposit = async (req, res) => {
         return res.status(201).json({ message: 'Deposit efetued'})
 
     } catch (error) {
-
-        console.log(error)
 
         return res.status(500).json({ message: 'Internal error' })
 

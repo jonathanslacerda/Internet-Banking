@@ -29,7 +29,7 @@ const withdraw = async (req, res) => {
         await knex('withdraws').insert({ client_id, transaction_date: withdrawDate, amount })
 
         user.fund -= amount
-
+    
         await knex('client').update(user).where({ id: client_id })
 
         return res.status(201).json({ message: 'withdraw efetued'})
