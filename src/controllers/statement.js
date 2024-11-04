@@ -20,8 +20,10 @@ const statement = async (req, res) => {
         };
 
         const deposits = await knex('deposits').where({ client_id: id}).returning()
+        const withdraws = await knex('withdraws').where({ client_id: id}).returning()
+        const transfers = await knex('transfers').where({ client_id_origin: id}).returning()
 
-        return res.status(200).json({deposits, user})
+        return res.status(200).json({deposits, withdraws, transfers})
 
     } catch (error) {
 

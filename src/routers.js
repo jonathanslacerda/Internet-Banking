@@ -46,7 +46,7 @@ routers.post('/transactions/deposits', bodyRequestValidation(depositSchema), new
 routers.post('/transactions/withdraws', bodyRequestValidation(withdrawSchema), withdraw)
 routers.post('/transactions/transfers',bodyRequestValidation(transferSchema), transfers)
 routers.get('/transactions/fund/:id/:passcode',paramsRequestValidation(getFundsSchema), getFunds)
-routers.get('transactions/statement/:id/:passcode',paramsRequestValidation(statementSchema), statement)
+routers.get('/transactions/statement/:id/:passcode',paramsRequestValidation(statementSchema), statement)
 
 
 module.exports = routers;
